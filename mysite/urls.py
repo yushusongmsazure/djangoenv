@@ -16,10 +16,12 @@ Including another URLconf
 # mysite/urls.py
 
 from django.contrib import admin
-from django.urls import path, include  # <-- Make sure you have both of these imports.
+from django.urls import path, include
+from blogging.views import stub_view, list_view, detail_view
 
 urlpatterns = [
     path('polling/', include('polling.urls')),  # <-- Add this
     path('admin/', admin.site.urls),
     path('', include('blogging.urls')),
+    path('posts/<int:post_id>/', detail_view, name="blog_detail"),
 ]
