@@ -12,5 +12,5 @@ class PostAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     exclude = ('posts',)
 
-admin.site.register(Post)
-admin.site.register(Category)
+admin.site.register(Post, PostAdmin)
+admin.site.register(Category, CategoryAdmin)
